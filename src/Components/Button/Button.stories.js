@@ -1,41 +1,44 @@
-import React from 'react';
-import Button from './Button';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Story } from '@storybook/addon-docs';
+import Button from "./Button"
 
-// Meta data about the story and
-// its respective component
 export default {
-    title:"Button",
-    component:Button,
-    argTypes: {
-        handleClick: {action: "HandleClick"},
-    },
-};
+    title: "Components/Button",
+    component: Button,
+    argTypes: { handleClick: { action: "handleClick" } },
+}
 
 const Template = args => <Button {...args} />
+
+export const Red = Template.bind({})
+Red.args = {
+    backgroundColor: "red",
+    label: "Press Me",
+    size: "md",
+}
+
+export const Green = Template.bind({})
+Green.args = {
+    backgroundColor: "green",
+    label: "Press Me",
+    size: "md",
+}
+
 export const Small = Template.bind({})
 Small.args = {
     backgroundColor: "red",
-    label: "First Task",
-    size: "small",
-}
-
-export const Medium = Template.bind({})
-Medium.args = {
-    backgroundColor: "green",
-    label: "Second Task",
-    size: "medium",
+    label: "Press Me",
+    size: "sm",
 }
 
 export const Large = Template.bind({})
 Large.args = {
-    backgroundColor: "blue",
-    label: "Third Task",
-    size: "large",
+    backgroundColor: "red",
+    label: "Press Me",
+    size: "lg",
 }
 
-//export const Login = () => <Button variant='Login'>Login</Button>
-//export const SignIn = () => <Button variant='sign-in'>Sign In</Button>
-
-//export const Primary = () => <Button primary>Button</Button>;
+export const LongLabel = Template.bind({})
+LongLabel.args = {
+    backgroundColor: "red",
+    label: "Press Me adsf asdf asdf asdfasdfasd fasd fasd fasd",
+    size: "md",
+}

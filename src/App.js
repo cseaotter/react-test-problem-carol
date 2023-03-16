@@ -1,10 +1,11 @@
 import React from 'react';
+import { Button } from './Components/Button'
 
 export default class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            isToggleOn: true
+            greeting: false
         };
         this.handleClick = this.handleClick.bind(this);
     }
@@ -12,7 +13,7 @@ export default class App extends React.Component {
     //handler goes here
     handleClick() {
         this.setState(prevState => ({
-            isToggleOn: !prevState.isToggleOn
+            greeting: !prevState.greeting
         }));
     }
 
@@ -20,11 +21,7 @@ export default class App extends React.Component {
         return (
             <div>
                 <p>Greetings!</p>
-                <p>
-                    <button onClick={this.handleClick}>
-                        {this.state.isToggleOn ? 'click me' : 'thanks'}
-                    </button>
-                </p>
+                <p><Button greeting={this.state.greeting} onClick={this.handleClick}></Button></p>
             </div>
         );
     }
