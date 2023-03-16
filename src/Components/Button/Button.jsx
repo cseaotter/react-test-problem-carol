@@ -26,17 +26,17 @@ export const SvgImage = () => {
     )
 }
 
-export const Button = ({ backgroundColor, size, icon, greeting, ...props }) => {
+export const Button = ({backgroundColor, size, icon, greeting, ...props}) => {
     return (
         <button
             type="button"
             className={['storybook-button', `storybook-button--${size}`].join(' ')}
-            style={backgroundColor && { backgroundColor }}
+            style={backgroundColor && {backgroundColor}}
 
             {...props}
         >
             {icon ?
-                <SvgImage />
+                <SvgImage/>
                 :
                 (greeting ? "thanks" : "click me")}
         </button>
